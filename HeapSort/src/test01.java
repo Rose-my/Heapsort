@@ -40,22 +40,21 @@ public class test01 {
 	
 	public static void HEAPIFY(int A[], int a, int b) {
 		int root =0;
-		int c=1;
+		int temp=1;
 		do {
-			c = 2 * root +1; 
-			
+			a = 2 * root +1; 
 			//자식 중에 더 큰 값 찾기
-			if (c < b && A[c]<A[c+1]) {
-				c++;
+			if (a < b && A[a]<A[a+1]) {
+				a++;
 			}
 			//루트보다 자식이 크다면 교환
-			if (c<b+1 && A[root]<A[c]) {
-				a = A[root];
-				A[root]=A[c];
-				A[c]=a;
+			if (a<b+1 && A[root]<A[a]) {
+				temp = A[root];
+				A[root]=A[a];
+				A[a]=temp;
 			}
-			root =c;
-		}while(c<b+1);
+			root =a;
+		}while(a<b+1);
 	}
 
 }
